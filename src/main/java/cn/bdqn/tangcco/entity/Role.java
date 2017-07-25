@@ -2,7 +2,7 @@ package cn.bdqn.tangcco.entity;
 
 import java.util.Date;
 
-public class Tole {
+public class Role {
     private Integer roleId;
 
     private String roleName;
