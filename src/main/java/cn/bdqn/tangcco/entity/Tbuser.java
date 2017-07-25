@@ -13,6 +13,23 @@ public class Tbuser {
 
     private Date lastLogin;
 
+    private UserInfo uInfo;
+
+    public Tbuser() {
+    }
+
+    @Override
+    public String toString() {
+        return "Tbuser{" +
+                "userId=" + userId +
+                ", userinfoId=" + userinfoId +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", lastLogin=" + lastLogin +
+                ", uInfo=" + uInfo +
+                '}';
+    }
+
     public Integer getUserId() {
         return userId;
     }
@@ -34,7 +51,7 @@ public class Tbuser {
     }
 
     public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -42,7 +59,7 @@ public class Tbuser {
     }
 
     public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+        this.password = password;
     }
 
     public Date getLastLogin() {
@@ -51,5 +68,22 @@ public class Tbuser {
 
     public void setLastLogin(Date lastLogin) {
         this.lastLogin = lastLogin;
+    }
+
+    public UserInfo getuInfo() {
+        return uInfo;
+    }
+
+    public void setuInfo(UserInfo uInfo) {
+        this.uInfo = uInfo;
+    }
+
+    public Tbuser(Integer userId, Integer userinfoId, String userName, String password, Date lastLogin, UserInfo uInfo) {
+        this.userId = userId;
+        this.userinfoId = userinfoId;
+        this.userName = userName;
+        this.password = password;
+        this.lastLogin = lastLogin;
+        this.uInfo = uInfo;
     }
 }

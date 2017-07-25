@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.bdqn.tangcco.Role.dao.RoleInfoMapper">
+    <resultMap id="RoleMap" type="cn.bdqn.tangcco.entity.Role">
+        <id column="role_id" property="roleId"/>
+        <result column="role_name" property="roleName"/>
+        <result column="role_level" property="roleLevel"/>
+        <result column="add_time" property="addTime"/>
+        <result column="last_update" property="lastUpdate"/>
+        <result column="role_status" property="roleStatus"/>
+    </resultMap>
+    <select id="queryCountRole" resultType="Integer">
+      SELECT count(*) FROM role
+
+    </select>
+    <select id="queryRoleByName" resultMap="RoleMap">
+        SELECT * FROM role
+        ORDER BY last_update DESC
+        limit #{start},#{rows}
+    </select>
+</mapper>

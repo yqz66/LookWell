@@ -29,6 +29,44 @@ public class UserInfo {
 
     private Integer userinfoStatus;
 
+    public UserInfo() {
+    }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "userinfoId=" + userinfoId +
+                ", userinfoName='" + userinfoName + '\'' +
+                ", birthday=" + birthday +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", joinDate=" + joinDate +
+                ", nickName='" + nickName + '\'' +
+                ", schoolId=" + schoolId +
+                ", idNum='" + idNum + '\'' +
+                ", birthPlace='" + birthPlace + '\'' +
+                ", lastUpdate=" + lastUpdate +
+                ", addTime=" + addTime +
+                ", userinfoStatus=" + userinfoStatus +
+                '}';
+    }
+
+    public UserInfo(Integer userinfoId, String userinfoName, Date birthday, String phone, String email, Date joinDate, String nickName, Integer schoolId, String idNum, String birthPlace, Date lastUpdate, Date addTime, Integer userinfoStatus) {
+        this.userinfoId = userinfoId;
+        this.userinfoName = userinfoName;
+        this.birthday = birthday;
+        this.phone = phone;
+        this.email = email;
+        this.joinDate = joinDate;
+        this.nickName = nickName;
+        this.schoolId = schoolId;
+        this.idNum = idNum;
+        this.birthPlace = birthPlace;
+        this.lastUpdate = lastUpdate;
+        this.addTime = addTime;
+        this.userinfoStatus = userinfoStatus;
+    }
+
     public Integer getUserinfoId() {
         return userinfoId;
     }

@@ -15,6 +15,30 @@ public class Role {
 
     private Integer roleStatus;
 
+    public Role() {
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
+                ", roleLevel=" + roleLevel +
+                ", addTime=" + addTime +
+                ", lastUpdate=" + lastUpdate +
+                ", roleStatus=" + roleStatus +
+                '}';
+    }
+
+    public Role(Integer roleId, String roleName, Integer roleLevel, Date addTime, Date lastUpdate, Integer roleStatus) {
+        this.roleId = roleId;
+        this.roleName = roleName;
+        this.roleLevel = roleLevel;
+        this.addTime = addTime;
+        this.lastUpdate = lastUpdate;
+        this.roleStatus = roleStatus;
+    }
+
     public Integer getRoleId() {
         return roleId;
     }
