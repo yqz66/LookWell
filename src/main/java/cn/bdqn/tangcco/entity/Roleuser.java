@@ -5,15 +5,27 @@ import java.util.Date;
 public class Roleuser {
     private Integer roluseId;
 
-    private Integer userId;
+    private Tbuser tbuser;
 
-    private Integer roleId;
+    private Role role;
 
     private String roluseDesc;
 
     private Date addTime;
 
     private Date lastUpdate;
+
+    @Override
+    public String toString() {
+        return "Roleuser{" +
+                "roluseId=" + roluseId +
+                ", tbuser=" + tbuser +
+                ", role=" + role +
+                ", roluseDesc='" + roluseDesc + '\'' +
+                ", addTime=" + addTime +
+                ", lastUpdate=" + lastUpdate +
+                '}';
+    }
 
     public Integer getRoluseId() {
         return roluseId;
@@ -23,20 +35,20 @@ public class Roleuser {
         this.roluseId = roluseId;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Tbuser getTbuser() {
+        return tbuser;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setTbuser(Tbuser tbuser) {
+        this.tbuser = tbuser;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public String getRoluseDesc() {
@@ -44,7 +56,7 @@ public class Roleuser {
     }
 
     public void setRoluseDesc(String roluseDesc) {
-        this.roluseDesc = roluseDesc == null ? null : roluseDesc.trim();
+        this.roluseDesc = roluseDesc;
     }
 
     public Date getAddTime() {
@@ -61,5 +73,17 @@ public class Roleuser {
 
     public void setLastUpdate(Date lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    public Roleuser(Integer roluseId, Tbuser tbuser, Role role, String roluseDesc, Date addTime, Date lastUpdate) {
+        this.roluseId = roluseId;
+        this.tbuser = tbuser;
+        this.role = role;
+        this.roluseDesc = roluseDesc;
+        this.addTime = addTime;
+        this.lastUpdate = lastUpdate;
+    }
+
+    public Roleuser() {
     }
 }
