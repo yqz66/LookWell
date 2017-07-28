@@ -17,7 +17,7 @@ public class TestRole extends TestBase{
     private RoleService roleService;
     @Test
     public void TestQueryRole(){
-        PageUtil<Role> r=roleService.queryRoleByName (1,2);
+        PageUtil<Role> r=roleService.queryRoleByName (1,2,"校长");
         System.out.println (r.getTotal ());
         List<Role> roleList=r.getObjs ();
         for (int i=0;i<roleList.size ();i++){

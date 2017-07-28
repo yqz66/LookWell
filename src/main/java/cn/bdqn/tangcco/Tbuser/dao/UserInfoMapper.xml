@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.tangcco.Tbuser.dao.UserInfoMapper">
+    <resultMap id="TbuserMap" type="cn.bdqn.tangcco.entity.Tbuser">
+        <id column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="password" property="password"/>
+        <result column="last_login" property="lastLogin"/>
+        <association property="uInfo" resultMap="uInfoMap" javaType="UserInfo"></association>
+    </resultMap>
+    <resultMap id="uInfoMap" type="cn.bdqn.tangcco.entity.UserInfo">
+        <id column="userinfo_id" property="userinfoId"/>
+        <result column="userinfo_name" property="userinfoName"/>
+        <result column="birthday" property="birthday"/>
+        <result column="phone" property="phone"/>
+        <result column="email" property="email"/>
+        <result column="join_date" property="joinDate"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="school_id" property="schoolId"/>
+        <result column="id_num" property="idNum"/>
+        <result column="birth_place" property="birthPlace"/>
+        <result column="last_update" property="lastUpdate"/>
+        <result column="add_time" property="addTime"/>
+        <result column="userinfo_status" property="userinfoStatus"/>
+    </resultMap>
+    <select id="queryCountTbuser" resultType="Integer">
+        SELECT COUNT(*) FROM tbuser
+        <if test="userName!=null">
+            WHERE user_name LIKE CONCAT ('%',#{userName},'%')
+        </if>
+    </select>
+    <select id="queryTbuser" resultMap="TbuserMap">
+        SELECT * FROM tbuser tuser,user_info uinfo
+        WHERE uinfo.userinfo_id=tuser.userinfo_id
+        <if test="userName!=null">
+            AND user_name LIKE CONCAT('%',#{userName},'%')
+        </if>
+       ORDER BY tuser.user_id DESC
+        limit #{start},#{rows}
+    </select>
+</mapper>

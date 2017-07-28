@@ -5,7 +5,6 @@ import java.util.Date;
 public class Tbuser {
     private Integer userId;
 
-    private Integer userinfoId;
 
     private String userName;
 
@@ -22,7 +21,6 @@ public class Tbuser {
     public String toString() {
         return "Tbuser{" +
                 "userId=" + userId +
-                ", userinfoId=" + userinfoId +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", lastLogin=" + lastLogin +
@@ -36,14 +34,6 @@ public class Tbuser {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
-    }
-
-    public Integer getUserinfoId() {
-        return userinfoId;
-    }
-
-    public void setUserinfoId(Integer userinfoId) {
-        this.userinfoId = userinfoId;
     }
 
     public String getUserName() {
@@ -78,9 +68,8 @@ public class Tbuser {
         this.uInfo = uInfo;
     }
 
-    public Tbuser(Integer userId, Integer userinfoId, String userName, String password, Date lastLogin, UserInfo uInfo) {
+    public Tbuser(Integer userId, String userName, String password, Date lastLogin, UserInfo uInfo) {
         this.userId = userId;
-        this.userinfoId = userinfoId;
         this.userName = userName;
         this.password = password;
         this.lastLogin = lastLogin;

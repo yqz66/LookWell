@@ -12,10 +12,15 @@
     </resultMap>
     <select id="queryCountRole" resultType="Integer">
       SELECT count(*) FROM role
-
+        <if test="roleName!=null">
+            WHERE role_name LIKE CONCAT ('%',#{roleName},'%')
+        </if>
     </select>
     <select id="queryRoleByName" resultMap="RoleMap">
         SELECT * FROM role
+        <if test="roleName!=null">
+            WHERE role_name LIKE CONCAT ('%',#{roleName},'%')
+        </if>
         ORDER BY last_update DESC
         limit #{start},#{rows}
     </select>

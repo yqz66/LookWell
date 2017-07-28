@@ -9,6 +9,6 @@ import java.util.List;
  * Created by Clown on 2017/07/25.
  */
 public interface RoleInfoMapper {
-    public Integer queryCountRole();
-    public List<Role> queryRoleByName(@Param("start") Integer start,@Param("rows") Integer rows);
+    public Integer queryCountRole(@Param("roleName") String roleName);
+    public List<Role> queryRoleByName(@Param("start") Integer start,@Param("rows") Integer rows,@Param ("roleName") String roleName);
 }

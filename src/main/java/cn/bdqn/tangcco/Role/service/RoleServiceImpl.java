@@ -16,11 +16,10 @@ public class RoleServiceImpl implements RoleService {
     @Resource
     private RoleInfoMapper roleInfoMapper;
     @Override
-    public PageUtil queryRoleByName(Integer page, Integer rows) {
-
+    public PageUtil queryRoleByName(Integer page, Integer rows ,String roleName) {
+        Integer count=roleInfoMapper.queryCountRole (roleName);
         PageUtil pageUtil=new PageUtil (page,rows);
-        List<Role> roleList=roleInfoMapper.queryRoleByName (pageUtil.getStart (),rows);
-        Integer count=roleInfoMapper.queryCountRole ();
+        List<Role> roleList=roleInfoMapper.queryRoleByName (pageUtil.getStart (),rows,roleName);
         pageUtil.setTotal (count);
         pageUtil.setObjs (roleList);
         return pageUtil;
