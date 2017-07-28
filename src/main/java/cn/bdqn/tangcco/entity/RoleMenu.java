@@ -5,15 +5,36 @@ import java.util.Date;
 public class RoleMenu {
     private Integer rolmenId;
 
-    private Integer roleId;
+    private Role role;
 
     private String rolmenDesc;
 
-    private Integer menuId;
+    private Menu menu;
 
     private Date addTime;
 
     private Date lastUpdate;
+
+    @Override
+    public String toString() {
+        return "RoleMenu{" +
+                "rolmenId=" + rolmenId +
+                ", role=" + role +
+                ", rolmenDesc='" + rolmenDesc + '\'' +
+                ", menu=" + menu +
+                ", addTime=" + addTime +
+                ", lastUpdate=" + lastUpdate +
+                '}';
+    }
+
+    public RoleMenu(Integer rolmenId, Role role, String rolmenDesc, Menu menu, Date addTime, Date lastUpdate) {
+        this.rolmenId = rolmenId;
+        this.role = role;
+        this.rolmenDesc = rolmenDesc;
+        this.menu = menu;
+        this.addTime = addTime;
+        this.lastUpdate = lastUpdate;
+    }
 
     public Integer getRolmenId() {
         return rolmenId;
@@ -23,12 +44,12 @@ public class RoleMenu {
         this.rolmenId = rolmenId;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public String getRolmenDesc() {
@@ -36,15 +57,15 @@ public class RoleMenu {
     }
 
     public void setRolmenDesc(String rolmenDesc) {
-        this.rolmenDesc = rolmenDesc == null ? null : rolmenDesc.trim();
+        this.rolmenDesc = rolmenDesc;
     }
 
-    public Integer getMenuId() {
-        return menuId;
+    public Menu getMenu() {
+        return menu;
     }
 
-    public void setMenuId(Integer menuId) {
-        this.menuId = menuId;
+    public void setMenu(Menu menu) {
+        this.menu = menu;
     }
 
     public Date getAddTime() {
@@ -61,5 +82,8 @@ public class RoleMenu {
 
     public void setLastUpdate(Date lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    public RoleMenu() {
     }
 }

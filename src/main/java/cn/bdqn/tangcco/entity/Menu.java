@@ -3,7 +3,7 @@ package cn.bdqn.tangcco.entity;
 public class Menu {
     private Integer menuId;
 
-    private String menuName;
+    private String text;
 
     private String menuUrl;
 
@@ -17,12 +17,12 @@ public class Menu {
         this.menuId = menuId;
     }
 
-    public String getMenuName() {
-        return menuName;
+    public String getText() {
+        return text;
     }
 
-    public void setMenuName(String menuName) {
-        this.menuName = menuName == null ? null : menuName.trim();
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getMenuUrl() {
@@ -30,7 +30,7 @@ public class Menu {
     }
 
     public void setMenuUrl(String menuUrl) {
-        this.menuUrl = menuUrl == null ? null : menuUrl.trim();
+        this.menuUrl = menuUrl;
     }
 
     public Integer getParentId() {
@@ -39,5 +39,18 @@ public class Menu {
 
     public void setParentId(Integer parentId) {
         this.parentId = parentId;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "menuId=" + menuId +
+                ", text='" + text + '\'' +
+                ", menuUrl='" + menuUrl + '\'' +
+                ", parentId=" + parentId +
+                '}';
+    }
+
+    public Menu() {
     }
 }

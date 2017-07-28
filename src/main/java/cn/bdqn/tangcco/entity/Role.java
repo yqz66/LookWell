@@ -15,6 +15,18 @@ public class Role {
 
     private Integer roleStatus;
 
+    @Override
+    public String toString() {
+        return "Role{" +
+                "roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
+                ", roleLevel=" + roleLevel +
+                ", addTime=" + addTime +
+                ", lastUpdate=" + lastUpdate +
+                ", roleStatus=" + roleStatus +
+                '}';
+    }
+
     public Integer getRoleId() {
         return roleId;
     }

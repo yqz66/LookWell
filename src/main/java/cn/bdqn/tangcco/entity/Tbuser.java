@@ -13,6 +13,28 @@ public class Tbuser {
 
     private Date lastLogin;
 
+    @Override
+    public String toString() {
+        return "Tbuser{" +
+                "userId=" + userId +
+                ", userinfoId=" + userinfoId +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", lastLogin=" + lastLogin +
+                '}';
+    }
+
+    public Tbuser(Integer userId, Integer userinfoId, String userName, String password, Date lastLogin) {
+        this.userId = userId;
+        this.userinfoId = userinfoId;
+        this.userName = userName;
+        this.password = password;
+        this.lastLogin = lastLogin;
+    }
+
+    public Tbuser() {
+    }
+
     public Integer getUserId() {
         return userId;
     }
