@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.tangcco.grade.dao.GradeTypeMapper">
+    <resultMap id="gradeTypeMap" type="cn.bdqn.tangcco.entity.GradeType">
+        <id property="gratypId" column="gratyp_id"></id>
+        <result property="gratypName" column="gratyp_name"/>
+        <result property="addTime" column="add_time"/>
+        <result property="lastUpdate" column="last_update"/>
+    </resultMap>
+    <select id="queryAll" resultMap="gradeTypeMap">
+
+        SELECT * FROM grade_type
+        <if test="gratypName!=null">
+            WHERE gratyp_name LIKE concat('%',#{gratypName},'%')
+        </if>
+        ORDER BY gratyp_id DESC
+        LIMIT #{start},#{rows}
+    </select>
+    <select id="queryCountByGratypName" resultType="Integer">
+        SELECT COUNT(*) FROM grade_type
+        <if test="gratypName!=null">
+            WHERE gratyp_name LIKE concat('%',#{gratypName},'%')
+        </if>
+    </select>
+</mapper>
